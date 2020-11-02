@@ -29,7 +29,7 @@ $(call inherit-product, device/oneplus/guacamole/device.mk)
 PRODUCT_DEVICE := guacamole
 PRODUCT_NAME := omni_guacamole
 PRODUCT_BRAND := OnePlus
-PRODUCT_MODEL := GM1917
+PRODUCT_MODEL := OnePlus 7 pro
 PRODUCT_MANUFACTURER := OnePlus
 
 PRODUCT_BUILD_PROP_OVERRIDES += \

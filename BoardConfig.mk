@@ -23,7 +23,7 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
-LOCAL_PATH := device/oneplus/guacamole
+DEVICE_PATH := device/oneplus/guacamole
 
 # Architecture
 TARGET_ARCH := arm64
@@ -52,6 +52,20 @@ BUILD_BROKEN_DUP_RULES := true
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=2048 firmware_class.path=/vendor/firmware_mnt/image loop.max_part=7 androidboot.usbcontroller=a600000.dwc3 skip_override androidboot.fastboot=1
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
+
+# Toolchain for kernel compilation
+#TARGET_KERNEL_ARCH := arm64
+#TARGET_KERNEL_HEADER_ARCH := arm64
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
+#KERNEL_CLANG_TRIPLE := aarch64-linux-gnu-
+#TARGET_KERNEL_CLANG_COMPILE := true
+#TARGET_KERNEL_CLANG_PATH := prebuilts/clang/host/linux-x86/clang-proton
+#KERNEL_TOOLCHAIN := prebuilts/clang/host/linux-x86/clang-proton
+#TARGET_KERNEL_CONFIG := ofox_defconfig
+#TARGET_KERNEL_SOURCE := kernel/oneplus/sm8150
+#BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+
+# Prebuilt
 TARGET_PREBUILT_KERNEL := device/oneplus/guacamole/prebuilt/Image.gz
 BOARD_BOOT_HEADER_VERSION := 2
 BOARD_KERNEL_IMAGE_NAME := Image
@@ -59,7 +73,6 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_PREBUILT_DTBIMAGE_DIR := device/oneplus/guacamole/prebuilt/dtb.img
 BOARD_DTB_OFFSET := 0x01f00000
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION) --dtb_offset $(BOARD_DTB_OFFSET) --dtb $(BOARD_PREBUILT_DTBIMAGE_DIR)
-
 
 # Platform
 TARGET_BOARD_PLATFORM := msmnile
@@ -147,7 +160,7 @@ TW_USE_LEDS_HAPTICS := true
 USE_RECOVERY_INSTALLER := true
 RECOVERY_INSTALLER_PATH := device/oneplus/guacamole/installer
 TW_EXCLUDE_TWRPAPP := true
-TW_INCLUDE_REPACKTOOLS := true
+#TW_INCLUDE_REPACKTOOLS := true
 TW_HAS_EDL_MODE := true
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
