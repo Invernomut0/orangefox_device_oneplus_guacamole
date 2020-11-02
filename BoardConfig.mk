@@ -23,6 +23,8 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
+DEVICE_PATH := device/oneplus/guacamole
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a
@@ -49,6 +51,21 @@ BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.console=ttyMSM0 an
 BOARD_KERNEL_CMDLINE += skip_override androidboot.fastboot=1
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
+
+
+# Toolchain for kernel compilation
+#TARGET_KERNEL_ARCH := arm64
+#TARGET_KERNEL_HEADER_ARCH := arm64
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
+#KERNEL_CLANG_TRIPLE := aarch64-linux-gnu-
+#TARGET_KERNEL_CLANG_COMPILE := true
+#TARGET_KERNEL_CLANG_PATH := prebuilts/clang/host/linux-x86/clang-proton
+#KERNEL_TOOLCHAIN := prebuilts/clang/host/linux-x86/clang-proton
+#TARGET_KERNEL_CONFIG := ofox_defconfig
+#TARGET_KERNEL_SOURCE := kernel/oneplus/sm8150
+#BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+
+# Prebuilt
 TARGET_PREBUILT_KERNEL := device/oneplus/guacamole/prebuilt/Image.gz-dtb
 
 # Platform
@@ -143,7 +160,7 @@ TW_USE_LEDS_HAPTICS := true
 USE_RECOVERY_INSTALLER := true
 RECOVERY_INSTALLER_PATH := device/oneplus/guacamole/installer
 TW_EXCLUDE_TWRPAPP := true
-TW_INCLUDE_REPACKTOOLS := true
+#TW_INCLUDE_REPACKTOOLS := true
 TW_HAS_EDL_MODE := true
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true

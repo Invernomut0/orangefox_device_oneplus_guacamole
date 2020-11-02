@@ -1,0 +1,15 @@
+[
+  {
+    "remote":"github",
+    "repository": "Justasic/kernel_oneplus_sm8150",
+    "target_path": "kernel/oneplus/sm8150",
+    "revision":"elle"
+  },
+  {
+    "remote":"github",
+    "repository": "kdrag0n/proton-clang",
+    "target_path": "prebuilts/clang/host/linux-x86/clang-proton",
+    "clone-depth" : "1"
+  }
+]
+
