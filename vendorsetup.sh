@@ -5,7 +5,7 @@ export TARGET_ARCH="arm64"
 
 # Some about us
 export FOX_VERSION="R11.0_1.2"
-export OF_MAINTAINER=NightShadow
+export OF_MAINTAINER=Invernomuto
 
 # Build environment stuffs
 export ALLOW_MISSING_DEPENDENCIES=true
@@ -13,6 +13,7 @@ export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER="1"
 export OF_DISABLE_MIUI_SPECIFIC_FEATURES="1"
 # export OF_VANILLA_BUILD="1"
 export LC_ALL="C"
+export TARGET_DEVICE_ALT="guacamoleb, guacamolec"
 
 # Use magisk boot for patching
 export OF_USE_MAGISKBOOT=1
